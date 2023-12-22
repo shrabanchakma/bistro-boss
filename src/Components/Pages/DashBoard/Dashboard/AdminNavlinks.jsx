@@ -5,7 +5,7 @@ const UserNavlinks = () => {
   return (
     <>
       <li>
-        <NavLink className={"text-xl uppercase"} to={"/dashboard/user-home"}>
+        <NavLink className={"text-xl uppercase"} to={"/dashboard/admin-home"}>
           <FaHome />
           Admin Home
         </NavLink>

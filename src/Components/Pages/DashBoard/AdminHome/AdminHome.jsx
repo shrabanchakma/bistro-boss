@@ -1,6 +1,6 @@
-import UseAuth from "../../../Hooks/UseAuth";
+import UseAuth from "../../../../Hooks/UseAuth";
 
-const AdminDashboard = () => {
+const AdminHome = () => {
   const { user } = UseAuth();
   return (
     <div>
@@ -9,4 +9,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default AdminHome;

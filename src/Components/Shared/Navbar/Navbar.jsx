@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import UseAuth from "../../../Hooks/UseAuth";
 import { IoCartSharp } from "react-icons/io5";
 import UseCart from "../../../Hooks/UseCart";
+import UseAdmin from "../../../Hooks/UseAdmin";
 const Navbar = () => {
   const { userlogOut, user } = UseAuth();
+  const [isAdmin] = UseAdmin();
   const [cart] = UseCart();
   // console.log(cart);
   const handleLogOut = async () => {
@@ -24,7 +26,16 @@ const Navbar = () => {
       <li>
         <Link to={"/order/salad"}>Order</Link>
       </li>
-
+      {user && isAdmin && (
+        <li>
+          <Link to={"/dashboard/admin-home"}>DashBoard</Link>
+        </li>
+      )}
+      {user && !isAdmin && (
+        <li>
+          <Link to={"/dashboard/user-home"}>DashBoard</Link>
+        </li>
+      )}
       {user ? (
         <>
           <li>
